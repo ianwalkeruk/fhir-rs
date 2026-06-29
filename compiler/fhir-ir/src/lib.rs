@@ -6,6 +6,7 @@ pub mod datatype;
 pub mod documentation;
 pub mod field;
 pub mod golden;
+pub mod golden_test;
 pub mod ir;
 pub mod primitive;
 pub mod reference;
