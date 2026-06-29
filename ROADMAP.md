@@ -204,7 +204,7 @@ Completion of this epic enables:
 
 ---
 
-## Epic 0.4
+## Epic 0.4 ✓
 
 ### Compiler CLI
 
@@ -216,21 +216,23 @@ The CLI is a development and debugging tool.
 
 It is not a code generator.
 
+**Status: COMPLETE**
+
 ---
 
 ### Objectives
 
-* Make compiler state observable.
-* Support pass-by-pass debugging.
-* Enable deterministic testing.
-* Provide tooling for future compiler development.
-* Decouple compiler inspection from code generation.
+* [x] Make compiler state observable.
+* [x] Support pass-by-pass debugging.
+* [x] Enable deterministic testing.
+* [x] Provide tooling for future compiler development.
+* [x] Decouple compiler inspection from code generation.
 
 ---
 
 ### Deliverables
 
-#### CLI Application
+#### CLI Application ✓
 
 Create a standalone executable.
 
@@ -244,7 +246,7 @@ The CLI should be lightweight and depend only upon compiler crates.
 
 ---
 
-#### Command Structure
+#### Command Structure ✓
 
 Initial commands:
 
@@ -258,6 +260,8 @@ Display:
 * IR version
 * supported FHIR release(s)
 
+Implemented as `compiler/fhirc/src/commands.rs` with deterministic YAML output.
+
 ---
 
 ```text
@@ -265,6 +269,8 @@ fhirc schema
 ```
 
 Display the supported IR schema version.
+
+Implemented via `fhir-ir-schema` crate integration.
 
 ---
 
@@ -276,6 +282,8 @@ Validate an IR document against the current schema.
 
 Exit with a non-zero status on validation failure.
 
+Implemented with YAML deserialization and validation pipeline.
+
 ---
 
 ```text
@@ -285,6 +293,8 @@ fhirc pretty patient.ir.yaml
 Pretty-print an IR document in a canonical format.
 
 Useful for reviews and debugging.
+
+Implemented with stable `serde_yaml` serialization.
 
 ---
 
@@ -296,9 +306,11 @@ Normalise ordering and formatting.
 
 Output must be deterministic.
 
+Implemented with deterministic field ordering and no timestamps.
+
 ---
 
-#### Future Commands (Stub Only)
+#### Future Commands (Stub Only) ✓
 
 Reserve command names for future functionality.
 
@@ -320,29 +332,31 @@ fhirc diff before.ir.yaml after.ir.yaml
 
 This establishes the long-term CLI interface without committing to implementation.
 
+Implemented as stubs returning `NotImplemented` errors or "not yet implemented" messages.
+
 ---
 
-### Testing
+### Testing ✓
 
 Create integration tests verifying:
 
-* command execution
-* deterministic output
-* stable YAML formatting
-* exit codes
-* invalid input handling
+* [x] command execution
+* [x] deterministic output
+* [x] stable YAML formatting
+* [x] exit codes
+* [x] invalid input handling
 
 CLI output should be suitable for golden tests.
 
 ---
 
-### Documentation
+### Documentation ✓
 
 Provide:
 
-* command reference
-* examples
-* expected workflows
+* [x] command reference
+* [x] examples
+* [x] expected workflows
 
 Example workflow:
 
@@ -372,16 +386,16 @@ validated.ir.yaml
 
 ---
 
-### Exit Criteria
+### Exit Criteria ✓
 
 The project provides:
 
-* a functioning CLI executable
-* deterministic YAML formatting
-* IR validation
-* schema reporting
-* integration tests
-* user documentation
+* [x] a functioning CLI executable
+* [x] deterministic YAML formatting
+* [x] IR validation
+* [x] schema reporting
+* [x] integration tests
+* [x] user documentation
 
 No compiler passes are implemented during this epic.
 
@@ -389,7 +403,7 @@ The CLI establishes the project's primary debugging and inspection interface.
 
 ---
 
-### Future Work Enabled
+### Future Work Enabled ✓
 
 Completion of this epic enables:
 
