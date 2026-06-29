@@ -10,9 +10,7 @@ Each phase should be independently testable and releasable.
 
 Repository Foundation
 
-## Epic 0.1
-
-Workspace
+## Epic 0.1 ✓
 
 Deliverables
 
