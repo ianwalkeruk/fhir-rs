@@ -1,7 +1,7 @@
 ---
 description: Plan, implement and complete the next roadmap task.
 agent: code
-model: kilo/kilo-auto/efficient
+model: kilo/kilo-auto/free
 ---
 
 # Automated Task Management
