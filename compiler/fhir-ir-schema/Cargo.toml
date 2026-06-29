@@ -1,0 +1,9 @@
+[package]
+name = "fhir-ir-schema"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+fhir-ir = { path = "../fhir-ir" }
+
+[dev-dependencies]
