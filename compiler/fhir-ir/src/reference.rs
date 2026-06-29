@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::GoldenTest;
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Reference {
     pub targets: Vec<String>,
@@ -14,6 +16,8 @@ impl Reference {
         Self { targets: vec![] }
     }
 }
+
+impl GoldenTest for Reference {}
 
 #[cfg(test)]
 mod tests {

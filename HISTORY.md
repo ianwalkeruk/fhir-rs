@@ -2,6 +2,21 @@
 
 ## 2026-06-29
 
+### Golden Testing Framework (Task 0.2)
+
+Implemented the GoldenTest trait for all IR types and added comprehensive property-based testing infrastructure.
+
+**Changes:**
+
+- Created `compiler/fhir-ir/src/golden_test.rs` with GoldenTest trait and utility functions
+- Implemented GoldenTest for all IR types (Resource, Datatype, Field, Type, Cardinality, ChoiceType, Reference, Primitive, Constraint, Binding, Documentation, Specification, etc.)
+- Added `compiler/fhir-ir/tests/golden_test.rs` with property tests for serialization invariants
+- Added determinant, round-trip, and timestamp-free assertions
+
+**Tests:** 94 tests passing, including 8 new golden tests and 4 property tests verifying INV-001 deterministic output.
+
+## 2026-06-29
+
 ### Workspace Foundation (Task 0.1)
 
 Implemented workspace foundation infrastructure including CI, formatting, and security tools.

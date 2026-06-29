@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::Documentation;
+use crate::{Documentation, GoldenTest};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Primitive {
@@ -21,6 +21,8 @@ impl Primitive {
         self
     }
 }
+
+impl GoldenTest for Primitive {}
 
 #[cfg(test)]
 mod tests {

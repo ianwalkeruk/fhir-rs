@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::GoldenTest;
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Cardinality {
     Optional,
@@ -7,6 +9,8 @@ pub enum Cardinality {
     Repeated,
     RequiredRepeated,
 }
+
+impl GoldenTest for Cardinality {}
 
 #[cfg(test)]
 mod tests {

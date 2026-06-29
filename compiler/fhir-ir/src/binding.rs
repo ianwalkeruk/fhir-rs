@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::Documentation;
+use crate::{Documentation, GoldenTest};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Binding {
@@ -16,6 +16,8 @@ pub enum BindingStrength {
     Extensible,
     Example,
 }
+
+impl GoldenTest for BindingStrength {}
 
 impl Binding {
     pub fn new(strength: BindingStrength) -> Self {
@@ -36,6 +38,8 @@ impl Binding {
         self
     }
 }
+
+impl GoldenTest for Binding {}
 
 #[cfg(test)]
 mod tests {

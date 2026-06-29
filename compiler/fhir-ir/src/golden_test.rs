@@ -1,4 +1,4 @@
-use serde::{de::DeserializeOwned, Serialize};
+use serde::{Serialize, de::DeserializeOwned};
 
 pub trait GoldenTest: Serialize + DeserializeOwned + PartialEq + std::fmt::Debug {
     fn golden_yaml(&self) -> String {
@@ -32,7 +32,10 @@ pub trait GoldenTest: Serialize + DeserializeOwned + PartialEq + std::fmt::Debug
 pub fn assert_deterministic_serialization<T: Serialize>(value: &T) -> String {
     let yaml1 = serde_yaml::to_string(value).expect("Value must serialize to YAML");
     let yaml2 = serde_yaml::to_string(value).expect("Value must serialize to YAML");
-    assert_eq!(yaml1, yaml2, "Serialization must be deterministic (INV-001)");
+    assert_eq!(
+        yaml1, yaml2,
+        "Serialization must be deterministic (INV-001)"
+    );
     yaml1
 }
 
@@ -43,14 +46,23 @@ pub fn assert_round_trip<T: Serialize + DeserializeOwned + PartialEq + std::fmt:
 }
 
 pub fn assert_no_timestamps(yaml: &str) {
-    assert!(!yaml.contains("timestamp"), "YAML must not contain timestamps");
-    assert!(!yaml.contains("2026-"), "YAML must not contain machine timestamps");
+    assert!(
+        !yaml.contains("timestamp"),
+        "YAML must not contain timestamps"
+    );
+    assert!(
+        !yaml.contains("2026-"),
+        "YAML must not contain machine timestamps"
+    );
 }
 
 pub fn assert_no_machine_info(yaml: &str) {
-    if let Ok(user) = std::env::var("USER") {
-        if !user.is_empty() {
-            assert!(!yaml.contains(user.as_str()), "YAML must not contain machine-specific information");
-        }
+    if let Ok(user) = std::env::var("USER")
+        && !user.is_empty()
+    {
+        assert!(
+            !yaml.contains(user.as_str()),
+            "YAML must not contain machine-specific information"
+        );
     }
 }

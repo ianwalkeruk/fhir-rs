@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::{Datatype, Documentation, IrVersion, Primitive, Resource};
+use crate::{Datatype, Documentation, GoldenTest, IrVersion, Primitive, Resource};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Specification {
@@ -97,6 +97,16 @@ impl Specification {
         self
     }
 }
+
+impl GoldenTest for Specification {}
+
+impl GoldenTest for ValueSet {}
+
+impl GoldenTest for CodeSystem {}
+
+impl GoldenTest for SearchParameter {}
+
+impl GoldenTest for SearchParameterType {}
 
 #[cfg(test)]
 mod tests {

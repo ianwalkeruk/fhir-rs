@@ -29,3 +29,5 @@ pub use specification::{
     CodeSystem, SearchParameter, SearchParameterType, Specification, ValueSet,
 };
 pub use r#type::Type;
+
+pub use golden_test::GoldenTest;

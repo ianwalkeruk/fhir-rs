@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::GoldenTest;
+
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub struct IrVersion {
     pub major: u32,
@@ -34,6 +36,8 @@ impl Default for IrVersion {
         Self::CURRENT
     }
 }
+
+impl GoldenTest for IrVersion {}
 
 #[cfg(test)]
 mod tests {

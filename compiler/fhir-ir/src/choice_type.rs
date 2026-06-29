@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::Type;
+use crate::{GoldenTest, Type};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct ChoiceType {
@@ -24,6 +24,8 @@ impl ChoiceType {
         &self.base_name
     }
 }
+
+impl GoldenTest for ChoiceType {}
 
 #[cfg(test)]
 mod tests {
