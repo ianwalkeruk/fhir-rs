@@ -1,4 +1,4 @@
-# Roadmap
+# ROADMAP.md
 
 This roadmap intentionally favours small, reviewable changes.
 
@@ -44,7 +44,7 @@ Generated code is regression tested.
 
 ---
 
-## Epic 0.3
+## Epic 0.3 ✓
 
 ### Intermediate Representation Definition
 
@@ -56,56 +56,58 @@ The IR is considered part of the project's public architecture.
 
 All compiler passes consume and produce this representation.
 
+**Status: COMPLETE**
+
 ---
 
 ### Objectives
 
-* Define the complete IR schema.
-* Make the IR language-independent.
-* Ensure the IR is serialisable.
-* Version the IR independently of the FHIR specification.
-* Support deterministic YAML serialisation.
+* [x] Define the complete IR schema.
+* [x] Make the IR language-independent.
+* [x] Ensure the IR is serialisable.
+* [x] Version the IR independently of the FHIR specification.
+* [x] Support deterministic YAML serialisation.
 
 ---
 
 ### Deliverables
 
-#### IR Schema
+#### IR Schema ✓
 
 Create the core IR definitions representing:
 
-* Specification
-* Resource
-* Datatype
-* Primitive
-* Field
-* Type
-* ChoiceType
-* Reference
-* Cardinality
-* Constraint
-* Binding
-* Documentation
+* [x] Specification
+* [x] Resource
+* [x] Datatype
+* [x] Primitive
+* [x] Field
+* [x] Type
+* [x] ChoiceType
+* [x] Reference
+* [x] Cardinality
+* [x] Constraint
+* [x] Binding
+* [x] Documentation
 
 ---
 
-#### Rust Model
+#### Rust Model ✓
 
 Implement the IR as Rust structures.
 
 Requirements:
 
-* `Serialize`
-* `Deserialize`
-* `Debug`
-* `Clone`
-* `PartialEq`
+* [x] `Serialize`
+* [x] `Deserialize`
+* [x] `Debug`
+* [x] `Clone`
+* [x] `PartialEq`
 
 The Rust model is the canonical implementation of the schema.
 
 ---
 
-#### YAML Representation
+#### YAML Representation ✓
 
 Provide deterministic YAML serialisation.
 
@@ -129,11 +131,11 @@ resources:
         cardinality: Optional
 ```
 
-YAML output should be stable between compiler runs.
+YAML output is stable between compiler runs.
 
 ---
 
-#### IR Versioning
+#### IR Versioning ✓
 
 Introduce an independent IR version.
 
@@ -151,23 +153,23 @@ FHIR versioning remains separate.
 
 ---
 
-#### Golden Tests
+#### Golden Tests ✓
 
 Create snapshot tests verifying:
 
-* deterministic YAML
-* schema stability
-* serialisation round-tripping
+* [x] deterministic YAML
+* [x] schema stability
+* [x] serialisation round-tripping
 
 ---
 
-#### Documentation
+#### Documentation ✓
 
 Produce:
 
-* `IR.md`
-* schema documentation
-* example IR documents
+* [x] `IR.md`
+* [x] schema documentation
+* [x] example IR documents
 
 ---
 
@@ -175,11 +177,11 @@ Produce:
 
 The project can:
 
-* construct an IR in memory
-* serialise it to YAML
-* deserialize it back
-* verify equality after round-trip
-* produce deterministic snapshot output
+* [x] construct an IR in memory
+* [x] serialise it to YAML
+* [x] deserialize it back
+* [x] verify equality after round-trip
+* [x] produce deterministic snapshot output
 
 No compiler logic is implemented during this epic.
 

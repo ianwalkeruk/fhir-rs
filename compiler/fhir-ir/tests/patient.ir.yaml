@@ -1,0 +1,44 @@
+ir_version:
+  major: 0
+  minor: 1
+  patch: 0
+resources:
+- name: Patient
+  documentation: null
+  fields:
+  - name: identifier
+    type_: !Datatype Identifier
+    cardinality: Repeated
+    documentation: null
+    summary: false
+    modifier: false
+    must_support: false
+    constraints: []
+  - name: active
+    type_: !Primitive Boolean
+    cardinality: Optional
+    documentation: null
+    summary: false
+    modifier: false
+    must_support: false
+    constraints: []
+  constraints: []
+  bindings: []
+datatypes:
+- name: Identifier
+  documentation: null
+  fields:
+  - name: value
+    type_: !Primitive string
+    cardinality: Optional
+    documentation: null
+    summary: false
+    modifier: false
+    must_support: false
+    constraints: []
+  constraints: []
+  bindings: []
+primitives: []
+value_sets: []
+code_systems: []
+search_parameters: []
