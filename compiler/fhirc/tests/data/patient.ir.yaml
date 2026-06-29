@@ -1,0 +1,28 @@
+ir_version:
+  major: 0
+  minor: 1
+  patch: 0
+resources:
+- name: Patient
+  documentation:
+    short: A patient resource
+    definition: Demographics and other administrative information.
+  fields:
+  - name: active
+    type_: !Primitive boolean
+    cardinality: Optional
+    documentation:
+      short: Whether this patient's record is active
+    summary: false
+    modifier: false
+    must_support: false
+    constraints: []
+  constraints: []
+  bindings: []
+datatypes: []
+primitives:
+- name: boolean
+- name: string
+value_sets: []
+code_systems: []
+search_parameters: []

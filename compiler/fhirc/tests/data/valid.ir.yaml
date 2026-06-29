@@ -1,0 +1,25 @@
+ir_version:
+  major: 0
+  minor: 1
+  patch: 0
+resources:
+- name: Patient
+  documentation: null
+  fields:
+  - name: active
+    type_: !Primitive boolean
+    cardinality: Optional
+    documentation: null
+    summary: false
+    modifier: false
+    must_support: false
+    constraints: []
+  constraints: []
+  bindings: []
+datatypes: []
+primitives:
+- name: boolean
+- name: string
+value_sets: []
+code_systems: []
+search_parameters: []
