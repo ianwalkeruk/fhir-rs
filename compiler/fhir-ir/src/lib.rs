@@ -1,14 +1,30 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+pub mod binding;
+pub mod cardinality;
+pub mod choice_type;
+pub mod constraint;
+pub mod datatype;
+pub mod documentation;
+pub mod field;
+pub mod golden;
+pub mod ir;
+pub mod primitive;
+pub mod reference;
+pub mod resource;
+pub mod specification;
+pub mod r#type;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use binding::{Binding, BindingStrength};
+pub use cardinality::Cardinality;
+pub use choice_type::ChoiceType;
+pub use constraint::{Constraint, ConstraintSeverity};
+pub use datatype::Datatype;
+pub use documentation::Documentation;
+pub use field::Field;
+pub use ir::IrVersion;
+pub use primitive::Primitive;
+pub use reference::Reference;
+pub use resource::Resource;
+pub use specification::{
+    CodeSystem, SearchParameter, SearchParameterType, Specification, ValueSet,
+};
+pub use r#type::Type;
