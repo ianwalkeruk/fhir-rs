@@ -2,6 +2,21 @@
 
 ## 2026-06-29
 
+### Workspace Foundation (Task 0.1)
+
+Implemented workspace foundation infrastructure including CI, formatting, and security tools.
+
+**Changes:**
+
+- Created `.github/workflows/ci.yml` with jobs for rustfmt, clippy, build, test, and security
+- Created `.rustfmt.toml` with stable-compatible formatting rules
+- Created `clippy.toml` with workspace-wide lint thresholds
+- Created `deny.toml` for cargo-deny license and vulnerability checking
+
+**Tests:** All 69 workspace tests passing.
+
+## 2026-06-29
+
 ### IR Schema Rust Structures (Task 0.3.1)
 
 Implemented the Intermediate Representation schema as idiomatic Rust structures with Serialize, Deserialize, Debug, Clone, and PartialEq traits.

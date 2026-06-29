@@ -3,6 +3,8 @@ name = "fhirc"
 version = "0.1.0"
 edition = "2024"
 description = "Command-line interface for the FHIR compiler"
+license = "MIT"
+publish = false
 
 [[bin]]
 name = "fhirc"
