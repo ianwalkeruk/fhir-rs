@@ -4,7 +4,7 @@ mod error;
 mod exit_code;
 
 use clap::Parser;
-use cli::{Cli, Command, Commands, IrPath, Output};
+use cli::{Cli, Command, Commands, IrPath};
 
 fn main() {
     let args = Cli::parse();
@@ -26,8 +26,11 @@ fn main() {
         Commands::Diff => cli.diff(),
     };
 
-    if let Err(e) = result {
-        eprintln!("Error: {}", e);
-        std::process::exit(exit_code::from_error(&e));
+    match result {
+        Ok(()) => std::process::exit(exit_code::SUCCESS),
+        Err(e) => {
+            eprintln!("Error: {}", e);
+            std::process::exit(exit_code::from_error(&e));
+        }
     }
 }

@@ -9,6 +9,7 @@ pub enum Error {
     #[error("YAML parse error: {0}")]
     YamlParse(YamlError),
 
+    #[allow(dead_code)]
     #[error("IR validation failed: {0}")]
     ValidationError(ValidationError),
 
@@ -50,6 +51,7 @@ impl YamlError {
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]
+#[allow(dead_code)]
 pub struct ValidationError(String);
 
 impl fmt::Display for ValidationError {
@@ -58,6 +60,7 @@ impl fmt::Display for ValidationError {
     }
 }
 
+#[allow(dead_code)]
 impl ValidationError {
     pub fn new(message: impl Into<String>) -> Self {
         Self(message.into())
