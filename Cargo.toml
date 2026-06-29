@@ -1,0 +1,3 @@
+[workspace]
+resolver="3"
+members = [ "compiler/fhir-backend-rust", "compiler/fhir-ir","compiler/fhir-ir-schema", "compiler/fhir-parser", "compiler/fhir-passes", "compiler/fhirc", "crates/fhir-json", "crates/fhir-search", "crates/fhir-server", "crates/fhir-types", "crates/fhir-validation", "crates/fhir-xml", "generated/fhir-model", "macros/fhir-macros"]
