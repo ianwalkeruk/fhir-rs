@@ -1,22 +1,22 @@
-use fhir_parser::{Loader, LoaderError, ResourceLoader, ValueSetLoader, CodeSystemLoader};
+use fhir_parser::{CodeSystemLoader, Loader, LoaderError, ResourceLoader, ValueSetLoader};
 
 #[test]
 fn test_loader_trait_exists() {
     struct TestLoader;
 
+    #[allow(dead_code)]
     impl Loader for TestLoader {
         fn load(&self) -> Result<fhir_ir::Specification, LoaderError> {
             Err(LoaderError::InvalidVersion("test".to_string()))
         }
     }
-
-    assert!(true);
 }
 
 #[test]
 fn test_resource_loader_trait_exists() {
     struct TestResourceLoader;
 
+    #[allow(dead_code)]
     impl ResourceLoader for TestResourceLoader {
         fn load_resource(&self, _name: &str) -> Result<Option<fhir_ir::Resource>, LoaderError> {
             Err(LoaderError::NotFound("test".to_string()))
@@ -34,14 +34,13 @@ fn test_resource_loader_trait_exists() {
             Err(LoaderError::InvalidVersion("test".to_string()))
         }
     }
-
-    assert!(true);
 }
 
 #[test]
 fn test_valueset_loader_trait_exists() {
     struct TestValueSetLoader;
 
+    #[allow(dead_code)]
     impl ValueSetLoader for TestValueSetLoader {
         fn load_value_set(&self, _name: &str) -> Result<Option<fhir_ir::ValueSet>, LoaderError> {
             Err(LoaderError::NotFound("test".to_string()))
@@ -51,16 +50,18 @@ fn test_valueset_loader_trait_exists() {
             Err(LoaderError::InvalidVersion("test".to_string()))
         }
     }
-
-    assert!(true);
 }
 
 #[test]
 fn test_codesystem_loader_trait_exists() {
     struct TestCodeSystemLoader;
 
+    #[allow(dead_code)]
     impl CodeSystemLoader for TestCodeSystemLoader {
-        fn load_code_system(&self, _name: &str) -> Result<Option<fhir_ir::CodeSystem>, LoaderError> {
+        fn load_code_system(
+            &self,
+            _name: &str,
+        ) -> Result<Option<fhir_ir::CodeSystem>, LoaderError> {
             Err(LoaderError::NotFound("test".to_string()))
         }
 
@@ -68,8 +69,6 @@ fn test_codesystem_loader_trait_exists() {
             Err(LoaderError::InvalidVersion("test".to_string()))
         }
     }
-
-    assert!(true);
 }
 
 #[test]
@@ -99,5 +98,3 @@ fn test_loader_error_variants_exist() {
     let _err = LoaderError::InvalidVersion("R4".to_string());
     let _err = LoaderError::Xml("invalid XML".to_string());
 }
-
-#[test]

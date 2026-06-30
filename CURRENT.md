@@ -1,5 +1,5 @@
 # CURRENT.md
 
-Epic 0.2 (Golden testing framework) is complete.
+Epic 1.1 (Specification loader) is in progress.
 
-Next task: Epic 1.1 - Specification loader
+Next task: Epic 1.2 - XML parser
