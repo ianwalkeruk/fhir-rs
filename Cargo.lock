@@ -229,6 +229,13 @@ version = "0.1.0"
 [[package]]
 name = "fhir-parser"
 version = "0.1.0"
+dependencies = [
+ "fhir-ir",
+ "proptest",
+ "serde",
+ "serde_yaml",
+ "thiserror",
+]
 
 [[package]]
 name = "fhir-passes"

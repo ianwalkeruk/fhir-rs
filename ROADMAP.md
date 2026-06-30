@@ -433,6 +433,10 @@ Specification loader
 * ValueSets
 * CodeSystems
 
+### Discovered Additional Work
+
+`fhir-specification` crate listed as affected in TASK.md but does not exist. Create as dedicated specification artifact crate separate from `fhir-parser` when implementation begins.
+
 ## Epic 1.2
 
 XML parser

@@ -1,5 +1,22 @@
 # HISTORY.md
 
+## 2026-06-30
+
+### Specification Loader Interfaces (Task 1.1)
+
+Implemented the specification loader interfaces for loading FHIR specification artifacts.
+
+**Changes:**
+
+- Created `compiler/fhir-parser/src/error.rs` with `LoaderError` enum and `LoaderResult` type
+- Created `compiler/fhir-parser/src/loader.rs` with `Loader` trait for loading complete specifications
+- Created `compiler/fhir-parser/src/loader_resource.rs` with `ResourceLoader` trait for StructureDefinition/Datatype loading
+- Created `compiler/fhir-parser/src/loader_valueset.rs` with `ValueSetLoader` trait for ValueSet loading
+- Created `compiler/fhir-parser/src/loader_codesystem.rs` with `CodeSystemLoader` trait for CodeSystem loading
+- Added integration tests in `compiler/fhir-parser/tests/loader_traits.rs` verifying trait definitions and error variants
+
+**Tests:** 6 tests passing, including trait existence tests and error variant coverage.
+
 ## 2026-06-29
 
 ### Golden Testing Framework (Task 0.2)
