@@ -2,6 +2,28 @@
 
 ## 2026-06-30
 
+### XML Parser Interfaces (Task 1.2)
+
+Implemented the XML parser public interfaces and failing tests for the FHIR compiler's Source Layer.
+
+**Changes:**
+
+- Created `compiler/fhir-parser/src/parse.rs` with `Parse` trait producing `fhir-ir::Specification`
+- Created `compiler/fhir-parser/src/parse_error.rs` with `ParseError` enum covering structured XML failure modes
+- Created `compiler/fhir-parser/src/xml_types.rs` with XML token stream, event, name, attribute, and source types
+- Added FHIR XML artifact types: `StructureDefinitionXml`, `ValueSetXml`, `CodeSystemXml` with supporting enums
+- Added failing tests:
+  - `tests/parse_trait.rs` - Parse trait contract tests
+  - `tests/parse_error.rs` - ParseError variant coverage tests
+  - `tests/xml_types.rs` - XML type construction and accessor tests
+  - `tests/proptest.rs` - Property tests for determinism (5 tests)
+  - `tests/snapshot_tests.rs` - Snapshot/determinism tests (3 tests)
+- Updated `fhirc` CLI with `parse` command stub returning `NotImplemented`
+
+**Tests:** 44 parser tests passing, including trait existence, error variants, and determinism assertions.
+
+## 2026-06-30
+
 ### Specification Loader Interfaces (Task 1.1)
 
 Implemented the specification loader interfaces for loading FHIR specification artifacts.

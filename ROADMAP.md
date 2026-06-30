@@ -443,6 +443,34 @@ XML parser
 
 Produces internal specification objects.
 
+### Objectives
+
+* [x] Define XML parser public interfaces
+* [x] Define Parse trait for Initial IR production
+* [x] Define ParseError enum covering parse failure modes
+* [x] Define XML token stream and source types
+* [x] Add CLI stub for `fhirc parse`
+
+### Deliverables
+
+#### Parser Interfaces ✓
+
+Created the public API surface for the FHIR XML parser:
+
+* `Parse` trait producing deterministic Initial IR
+* `ParseError` enum with structured failure variants
+* `XmlTokenStream`, `XmlEvent`, `XmlName`, `XmlAttribute` types
+* `XmlSource`, `StructureDefinitionXml`, `ValueSetXml`, `CodeSystemXml` types
+
+#### Tests ✓
+
+Interface and contract tests created:
+
+* unit tests for trait contracts
+* property tests for determinism
+* integration tests for CLI stub
+* snapshot tests for type stability
+
 ## Epic 1.3
 
 Reference resolver
