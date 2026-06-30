@@ -27,7 +27,7 @@ Repository builds cleanly.
 
 ---
 
-## Epic 0.2
+## Epic 0.2 ✓
 
 Golden testing framework
 

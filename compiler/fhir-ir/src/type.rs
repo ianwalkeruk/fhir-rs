@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::{ChoiceType, Reference};
+use crate::{ChoiceType, GoldenTest, Reference};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub enum Type {
@@ -32,6 +32,8 @@ impl Type {
         Self::Reference(reference)
     }
 }
+
+impl GoldenTest for Type {}
 
 #[cfg(test)]
 mod tests {

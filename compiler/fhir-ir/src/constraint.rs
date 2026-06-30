@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::GoldenTest;
+
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Constraint {
     pub id: String,
@@ -8,7 +10,7 @@ pub struct Constraint {
     pub human_description: String,
 }
 
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ConstraintSeverity {
     Error,
     Warning,
@@ -30,6 +32,10 @@ impl Constraint {
         }
     }
 }
+
+impl GoldenTest for Constraint {}
+
+impl GoldenTest for ConstraintSeverity {}
 
 #[cfg(test)]
 mod tests {

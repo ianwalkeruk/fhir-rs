@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::{Binding, Constraint, Documentation, Field};
+use crate::{Binding, Constraint, Documentation, Field, GoldenTest};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Datatype {
@@ -42,6 +42,8 @@ impl Datatype {
         self
     }
 }
+
+impl GoldenTest for Datatype {}
 
 #[cfg(test)]
 mod tests {

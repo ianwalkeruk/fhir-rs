@@ -1,6 +1,6 @@
 use serde::{Deserialize, Serialize};
 
-use crate::{Cardinality, Constraint, Documentation, Type};
+use crate::{Cardinality, Constraint, Documentation, GoldenTest, Type};
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Field {
@@ -53,6 +53,8 @@ impl Field {
         self
     }
 }
+
+impl GoldenTest for Field {}
 
 #[cfg(test)]
 mod tests {

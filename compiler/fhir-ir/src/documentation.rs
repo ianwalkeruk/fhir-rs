@@ -1,5 +1,7 @@
 use serde::{Deserialize, Serialize};
 
+use crate::GoldenTest;
+
 #[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
 pub struct Documentation {
     pub definition: Option<String>,
@@ -39,6 +41,8 @@ impl Documentation {
         self
     }
 }
+
+impl GoldenTest for Documentation {}
 
 #[cfg(test)]
 mod tests {
