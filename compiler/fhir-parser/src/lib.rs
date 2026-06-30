@@ -1,14 +1,12 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+pub mod error;
+pub mod loader;
+pub mod loader_resource;
+pub mod loader_valueset;
+pub mod loader_codesystem;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+pub use error::LoaderError;
+pub use error::LoaderResult;
+pub use loader::Loader;
+pub use loader_resource::ResourceLoader;
+pub use loader_valueset::ValueSetLoader;
+pub use loader_codesystem::CodeSystemLoader;
