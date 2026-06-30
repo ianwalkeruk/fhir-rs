@@ -117,8 +117,9 @@ impl Command for CliCommands {
     }
 
     fn parse(&self) -> Result<(), Error> {
-        println!("not yet implemented: parse");
-        Ok(())
+        Err(Error::NotImplemented(crate::error::CommandName::new(
+            "parse",
+        )))
     }
 
     fn pass(&self, _name: &str) -> Result<(), Error> {

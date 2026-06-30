@@ -70,8 +70,8 @@ fn test_parse_returns_not_implemented() {
     fhirc()
         .arg("parse")
         .assert()
-        .success()
-        .stdout(contains("not yet implemented"));
+        .failure()
+        .stderr(contains("Not yet implemented"));
 }
 
 #[test]
